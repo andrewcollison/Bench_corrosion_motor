@@ -19,7 +19,7 @@ int d2 = 3;
 int motor_speed = 9;
 
 int dir; // Motor direction 
-int spd = 255; // Motor Speed 
+int spd = 255; // Motor Speed           
 int sample_pos = 0; // 0 = sample raised. 1= sample lowerd
 
 void RTC_setup(){
@@ -32,16 +32,16 @@ void RTC_setup(){
   }
 }
 
-void motor_control(dir, spd){
+void motor_control(int dir, int spd){
   if(dir == 0){ // Set forward direction
     digitalWrite(d1, HIGH);
     digitalWrite(d2, LOW);
-    digitalWrite(motor_speed, spd);
+    analogWrite(motor_speed, spd);
     } 
    if(dir == 1){ // Set reverse direction
     digitalWrite(d1, LOW);
     digitalWrite(d2, HIGH);
-    digitalWrite(motor_speed, spd);
+    analogWrite(motor_speed, spd);
     }
 }
 
@@ -55,7 +55,7 @@ DateTime now = RTC.now();
   int csecond = now.second();
   
   // Fotmat date in and array {day/month/year H:M:S}
-  int dt_now[6] = {cday, cmonth, cyear, chour, cminute, csecond}
+  int dt_now[6] = {cday, cmonth, cyear, chour, cminute, csecond};
   
   return dt_now;  
 }
@@ -75,7 +75,17 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-
+  for(int i =60; i<255; i++){
+    motor_control(0, i);
+    delay(300);
+    }
+  delay(2000);  
+  motor_control(1, 0);
+  delay(5000);
+//  delay(3000);
+//  motor_control(0, 255);
+//  delay(3000);
+  
 
 
 
