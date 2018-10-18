@@ -7,30 +7,19 @@
  *  in a lab based environment
  */
 
-#include <Wire.h> // Also pre-installed
-#include "RTClib.h"
-#include <TimeLib.h>
-
-RTC_DS1307 RTC; // RTC clock module
-
 //set motor pins
 int d1 = 2;
 int d2 = 3;
 int motor_speed = 9;
 
 int dir; // Motor direction 
-int spd = 255; // Motor Speed           
+int spd;; // Motor Speed           
 int sample_pos = 0; // 0 = sample raised. 1= sample lowerd
 
-void RTC_setup(){
-  RTC.begin();
-  // Check to see if the RTC is keeping time.  If it is, load the time from your computer.
-  if (! RTC.isrunning()) {
-    Serial.println("RTC is NOT running!");
-    // This will reflect the time that your sketch was compiled
-    RTC.adjust(DateTime(__DATE__, __TIME__));
-  }
-}
+const unsigned long SECOND = 1000;
+const unsigned long MINUTE = 60*SECOND;
+const unsigned long HOUR = 3600*SECOND;
+
 
 void motor_control(int dir, int spd){
   if(dir == 0){ // Set forward direction
@@ -45,48 +34,35 @@ void motor_control(int dir, int spd){
     }
 }
 
-void get_time_RTC(){
-DateTime now = RTC.now();
-  int cyear = now.year();
-  int cmonth = now.month();
-  int cday = now.day();  
-  int chour = now.hour();
-  int cminute = now.minute();
-  int csecond = now.second();
-  
-  // Fotmat date in and array {day/month/year H:M:S}
-  int dt_now[6] = {cday, cmonth, cyear, chour, cminute, csecond};
-  
-  return dt_now;  
-}
-
-
 void setup() {
   // put your setup code here, to run once:
   pinMode(d1, OUTPUT);
   pinMode(d2, OUTPUT);
   pinMode(motor_speed, OUTPUT);
 
-  Wire.begin(); // IIC communications
-  Serial.begin(9600); // Serial communications 
-
-  RTC_setup();  
+  // Raise Arm to neutral position
+  motor_control(1, 255);
+  
+  // Test Raise and Lower
+  motor_control(0, 255);
+  delay(5000);
+  motor_control(1, 255);
+  delay(5000);   
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  for(int i =60; i<255; i++){
-    motor_control(0, i);
-    delay(300);
-    }
-  delay(2000);  
-  motor_control(1, 0);
-  delay(5000);
-//  delay(3000);
-//  motor_control(0, 255);
-//  delay(3000);
-  
-
-
-
+  // put your main code here, to run repeatedly:  
+  while(1){
+    // Motor Down
+    motor_control(0, 255); // Check the direction
+    delay(5000);   
+    // Hold Down: 15 minutes
+    delay(15*MINUTE);
+    // Motor Raise
+    motor_control(1, 255);
+    delay(5000);
+    // Hold up: 6 hours  
+    delay(6*HOURS);
+    // Repeat the cycle   
+  }
 }

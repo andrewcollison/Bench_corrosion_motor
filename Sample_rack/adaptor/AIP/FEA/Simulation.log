@@ -1,0 +1,65 @@
+﻿Simulation Simulation:1 started: 09-Oct-18, 3:38:33 PM
+Number of configurations: 1
+Default mesh: 3695 elements, 6422 nodes
+Solution time 1.6s
+Convergence rate: 11.5%
+Reached the total number of h refinements 
+Simulation Simulation:1 finished: 09-Oct-18, 3:38:35 PM
+Total time 0:00:02
+
+Simulation Simulation:1 started: 09-Oct-18, 3:40:20 PM
+Number of configurations: 1
+Default mesh: 3695 elements, 6422 nodes
+Solution time 1.5s
+Convergence rate: 11.5%
+Reached the total number of h refinements 
+Simulation Simulation:1 finished: 09-Oct-18, 3:40:21 PM
+Total time 0:00:01
+
+Simulation Simulation:1 started: 09-Oct-18, 3:41:38 PM
+Number of configurations: 1
+Default mesh: 3695 elements, 6422 nodes
+Simulation Simulation:1 finished: 09-Oct-18, 3:41:39 PM
+Total time 0:00:01
+
+Simulation Simulation:1 started: 09-Oct-18, 3:42:28 PM
+Number of configurations: 1
+Default mesh: 3695 elements, 6422 nodes
+Solution time 1.5s
+Convergence rate: 11.5%
+Reached the total number of h refinements 
+Simulation Simulation:1 finished: 09-Oct-18, 3:42:30 PM
+Total time 0:00:02
+
+Simulation Simulation:1 started: 09-Oct-18, 3:42:55 PM
+Number of configurations: 1
+Default mesh: 3695 elements, 6422 nodes
+Solution time 1.5s
+Convergence rate: 11.5%
+Reached the total number of h refinements 
+Simulation Simulation:1 finished: 09-Oct-18, 3:42:57 PM
+Total time 0:00:02
+
+Simulation Simulation:1 started: 09-Oct-18, 3:44:58 PM
+Number of configurations: 1
+Default mesh: 13388 elements, 21338 nodes
+Solution time 3.2s
+Convergence rate: 2.07%
+Problem converged 
+Simulation Simulation:1 finished: 09-Oct-18, 3:45:02 PM
+Total time 0:00:04
+
+Simulation Simulation:1 started: 09-Oct-18, 3:46:33 PM
+Number of configurations: 1
+Simulation Simulation:1 finished: 09-Oct-18, 3:46:33 PM
+Total time 0:00:00
+
+Simulation Simulation:1 started: 09-Oct-18, 3:47:30 PM
+Number of configurations: 1
+Default mesh: 13388 elements, 21338 nodes
+Solution time 2.6s
+Convergence rate: 2.07%
+Problem converged 
+Simulation Simulation:1 finished: 09-Oct-18, 3:47:33 PM
+Total time 0:00:03
+
