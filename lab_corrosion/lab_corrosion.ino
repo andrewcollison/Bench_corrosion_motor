@@ -1,6 +1,6 @@
 // Institution: Queensland University of Technology
 // Author: Andrew Collison
-// Supervisour: Assoc Prof. Geoffery Will
+// Updated: 29/10/18
 /* The driving code for an arduino motor driver and data logger
  *  used to raise and lower corrosion samples out of a solution
  *  to control and monitor the corrosion rate of various samples
@@ -62,7 +62,7 @@ void loop() {
     motor_control(1, 255);
     delay(5000);
     // Hold up: 6 hours  
-    delay(6*HOURS);
+    delay(6*HOUR);
     // Repeat the cycle   
   }
 }
